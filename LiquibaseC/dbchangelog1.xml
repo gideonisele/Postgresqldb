@@ -1,0 +1,252 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="Uncleared (generated)" id="1582056252625-1">
+        <createTable tableName="employees">
+            <column name="employeeid" type="SMALLINT(5)">
+                <constraints primaryKey="true" primaryKeyName="pk_employees"/>
+            </column>
+            <column name="lastname" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="firstname" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="title" type="VARCHAR(30)"/>
+            <column name="titleofcourtesy" type="VARCHAR(25)"/>
+            <column name="birthdate" type="date"/>
+            <column name="hiredate" type="date"/>
+            <column name="address" type="VARCHAR(60)"/>
+            <column name="city" type="VARCHAR(15)"/>
+            <column name="region" type="VARCHAR(15)"/>
+            <column name="postalcode" type="VARCHAR(10)"/>
+            <column name="country" type="VARCHAR(15)"/>
+            <column name="homephone" type="VARCHAR(24)"/>
+            <column name="extension" type="VARCHAR(4)"/>
+            <column name="photo" type="BYTEA"/>
+            <column name="notes" type="TEXT"/>
+            <column name="reportsto" type="SMALLINT(5)"/>
+            <column name="photopath" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-2">
+        <createTable tableName="region">
+            <column name="regionid" type="SMALLINT(5)">
+                <constraints primaryKey="true" primaryKeyName="pk_region"/>
+            </column>
+            <column name="regiondescription" type="CHAR">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-3">
+        <createTable tableName="customers">
+            <column name="customerid" type="CHAR">
+                <constraints primaryKey="true" primaryKeyName="pk_customers"/>
+            </column>
+            <column name="companyname" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contactname" type="VARCHAR(30)"/>
+            <column name="contacttitle" type="VARCHAR(30)"/>
+            <column name="address" type="VARCHAR(60)"/>
+            <column name="city" type="VARCHAR(15)"/>
+            <column name="region" type="VARCHAR(15)"/>
+            <column name="postalcode" type="VARCHAR(10)"/>
+            <column name="country" type="VARCHAR(15)"/>
+            <column name="phone" type="VARCHAR(24)"/>
+            <column name="fax" type="VARCHAR(24)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-4">
+        <createTable tableName="suppliers">
+            <column name="supplierid" type="SMALLINT(5)">
+                <constraints primaryKey="true" primaryKeyName="pk_suppliers"/>
+            </column>
+            <column name="companyname" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contactname" type="VARCHAR(30)"/>
+            <column name="contacttitle" type="VARCHAR(30)"/>
+            <column name="address" type="VARCHAR(60)"/>
+            <column name="city" type="VARCHAR(15)"/>
+            <column name="region" type="VARCHAR(15)"/>
+            <column name="postalcode" type="VARCHAR(10)"/>
+            <column name="country" type="VARCHAR(15)"/>
+            <column name="phone" type="VARCHAR(24)"/>
+            <column name="fax" type="VARCHAR(24)"/>
+            <column name="homepage" type="TEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-5">
+        <createTable tableName="territories">
+            <column name="territoryid" type="VARCHAR(20)">
+                <constraints primaryKey="true" primaryKeyName="pk_territories"/>
+            </column>
+            <column name="territorydescription" type="CHAR">
+                <constraints nullable="false"/>
+            </column>
+            <column name="regionid" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-6">
+        <createTable tableName="categories">
+            <column name="categoryid" type="SMALLINT(5)">
+                <constraints primaryKey="true" primaryKeyName="pk_categories"/>
+            </column>
+            <column name="categoryname" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT"/>
+            <column name="picture" type="BYTEA"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-7">
+        <createTable tableName="order_details">
+            <column name="orderid" type="SMALLINT(5)">
+                <constraints primaryKey="true" primaryKeyName="pk_order_details"/>
+            </column>
+            <column name="productid" type="SMALLINT(5)">
+                <constraints primaryKey="true" primaryKeyName="pk_order_details"/>
+            </column>
+            <column name="unitprice" type="FLOAT4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quantity" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="discount" type="FLOAT4">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-8">
+        <createTable tableName="customercustomerdemo">
+            <column name="customerid" type="CHAR">
+                <constraints primaryKey="true" primaryKeyName="pk_customercustomerdemo"/>
+            </column>
+            <column name="customertypeid" type="CHAR">
+                <constraints primaryKey="true" primaryKeyName="pk_customercustomerdemo"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-9">
+        <createTable tableName="orders">
+            <column name="orderid" type="SMALLINT(5)">
+                <constraints primaryKey="true" primaryKeyName="pk_orders"/>
+            </column>
+            <column name="customerid" type="CHAR"/>
+            <column name="employeeid" type="SMALLINT(5)"/>
+            <column name="orderdate" type="date"/>
+            <column name="requireddate" type="date"/>
+            <column name="shippeddate" type="date"/>
+            <column name="shipvia" type="SMALLINT(5)"/>
+            <column name="freight" type="FLOAT4"/>
+            <column name="shipname" type="VARCHAR(40)"/>
+            <column name="shipaddress" type="VARCHAR(60)"/>
+            <column name="shipcity" type="VARCHAR(15)"/>
+            <column name="shipregion" type="VARCHAR(15)"/>
+            <column name="shippostalcode" type="VARCHAR(10)"/>
+            <column name="shipcountry" type="VARCHAR(15)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-10">
+        <createTable tableName="shippers">
+            <column name="shipperid" type="SMALLINT(5)">
+                <constraints primaryKey="true" primaryKeyName="pk_shippers"/>
+            </column>
+            <column name="companyname" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone" type="VARCHAR(24)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-11">
+        <createTable tableName="products">
+            <column name="productid" type="SMALLINT(5)">
+                <constraints primaryKey="true" primaryKeyName="pk_products"/>
+            </column>
+            <column name="productname" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="supplierid" type="SMALLINT(5)"/>
+            <column name="categoryid" type="SMALLINT(5)"/>
+            <column name="quantityperunit" type="VARCHAR(20)"/>
+            <column name="unitprice" type="FLOAT4"/>
+            <column name="unitsinstock" type="SMALLINT(5)"/>
+            <column name="unitsonorder" type="SMALLINT(5)"/>
+            <column name="reorderlevel" type="SMALLINT(5)"/>
+            <column name="discontinued" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-12">
+        <createTable tableName="customerdemographics">
+            <column name="customertypeid" type="CHAR">
+                <constraints primaryKey="true" primaryKeyName="pk_customerdemographics"/>
+            </column>
+            <column name="customerdesc" type="TEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-13">
+        <createTable tableName="employeeterritories">
+            <column name="employeeid" type="SMALLINT(5)">
+                <constraints primaryKey="true" primaryKeyName="pk_employeeterritories"/>
+            </column>
+            <column name="territoryid" type="VARCHAR(20)">
+                <constraints primaryKey="true" primaryKeyName="pk_employeeterritories"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-14">
+        <addForeignKeyConstraint baseColumnNames="regionid" baseTableName="territories" constraintName="fk_territories_region" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="regionid" referencedTableName="region" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-15">
+        <addForeignKeyConstraint baseColumnNames="customerid" baseTableName="customercustomerdemo" constraintName="fk_customercustomerdemo_customers" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="customerid" referencedTableName="customers" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-16">
+        <addForeignKeyConstraint baseColumnNames="customerid" baseTableName="orders" constraintName="fk_orders_customers" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="customerid" referencedTableName="customers" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-17">
+        <addForeignKeyConstraint baseColumnNames="employeeid" baseTableName="orders" constraintName="fk_orders_employees" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="employeeid" referencedTableName="employees" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-18">
+        <addForeignKeyConstraint baseColumnNames="categoryid" baseTableName="products" constraintName="fk_products_categories" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="categoryid" referencedTableName="categories" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-19">
+        <addForeignKeyConstraint baseColumnNames="supplierid" baseTableName="products" constraintName="fk_products_suppliers" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="supplierid" referencedTableName="suppliers" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-20">
+        <addForeignKeyConstraint baseColumnNames="employeeid" baseTableName="employeeterritories" constraintName="fk_employeeterritories_employees" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="employeeid" referencedTableName="employees" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-21">
+        <addForeignKeyConstraint baseColumnNames="territoryid" baseTableName="employeeterritories" constraintName="fk_employeeterritories_territories" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="territoryid" referencedTableName="territories" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-22">
+        <addForeignKeyConstraint baseColumnNames="reportsto" baseTableName="employees" constraintName="fk_employees_employees" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="employeeid" referencedTableName="employees" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-23">
+        <addForeignKeyConstraint baseColumnNames="orderid" baseTableName="order_details" constraintName="fk_order_details_orders" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="orderid" referencedTableName="orders" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-24">
+        <addForeignKeyConstraint baseColumnNames="productid" baseTableName="order_details" constraintName="fk_order_details_products" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="productid" referencedTableName="products" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-25">
+        <addForeignKeyConstraint baseColumnNames="customertypeid" baseTableName="customercustomerdemo" constraintName="fk_customercustomerdemo_customerdemographics" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="customertypeid" referencedTableName="customerdemographics" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-26">
+        <addForeignKeyConstraint baseColumnNames="shipvia" baseTableName="orders" constraintName="fk_orders_shippers" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="shipperid" referencedTableName="shippers" validate="true"/>
+    </changeSet>
+    <changeSet author="Uncleared (generated)" id="1582056252625-27">
+        <createTable tableName="usstates">
+            <column name="stateid" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="statename" type="VARCHAR(100)"/>
+            <column name="stateabbr" type="VARCHAR(2)"/>
+            <column name="stateregion" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
