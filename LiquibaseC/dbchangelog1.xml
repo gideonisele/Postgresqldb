@@ -249,4 +249,5 @@
             <column name="stateregion" type="VARCHAR(50)"/>
         </createTable>
     </changeSet>
+    
 </databaseChangeLog>
