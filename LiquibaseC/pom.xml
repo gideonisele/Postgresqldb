@@ -47,7 +47,7 @@
     <version>3.8.4</version>
 
 <configuration>
-  <changeLogFile>/c:/Users/Uncleared/git/Postgresqldb/LiquibaseC/add_new_column.xml</changeLogFile>
+  <changeLogFile>/c:/Users/Uncleared/git/Postgresqldb/LiquibaseC/insert_categories_city2.xml</changeLogFile>
   <url>jdbc:postgresql://127.0.0.1:5432/northwind</url>
   <username>postgres</username>
   <password>postgres</password>
