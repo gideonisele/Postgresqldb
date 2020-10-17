@@ -33,7 +33,7 @@
 <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
-    <version>42.2.9</version>
+    <version>42.2.8</version>
 </dependency>
   </dependencies>
   
@@ -47,11 +47,11 @@
     <version>3.8.4</version>
 
 <configuration>
-  <changeLogFile>/c:/Users/Uncleared/git/Postgresqldb/LiquibaseC/insert_categories_city2.xml</changeLogFile>
-  <url>jdbc:postgresql://127.0.0.1:5432/northwind</url>
+  <changeLogFile>/c:/Users/pc/git/Postgresqldb/LiquibaseC/insert_categories_city2.xml</changeLogFile>
+  <url>jdbc:postgresql://10.0.0.200:5432/northwind</url>
   <username>postgres</username>
   <password>postgres</password>
-  <classpath>/c:/Users/Uncleared/Desktop/Liquibase/liquibase-3.8.4/postgresql-42.2.9.jar</classpath>
+  <classpath>c:/Program Files/Liquibase/postgresql-42.2.8.jar</classpath>
 </configuration>
 
 <executions>
